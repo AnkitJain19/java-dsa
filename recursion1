@@ -1,0 +1,40 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    static void func(int n){
+        if(n==0){
+            return ;
+        }
+        
+        func(n-1);
+        System.out.println(n);
+
+    }
+    static void revfunc(int n){
+        if(n==0){
+            return ;
+        }
+        
+        System.out.println(n);
+                func(n-1);
+    }
+    static int factorial (int n){
+        if(n==1){
+            return n;
+        }
+        n=n*factorial(n-1);
+        return n;
+    }
+	public static void main(String[] args) {
+	//func(5);
+	System.out.println(factorial(5));
+	    
+	}
+}
