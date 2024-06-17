@@ -1,0 +1,53 @@
+
+
+public class Main
+{
+    static boolean prime(int n){
+         for(int i=2;i<=n/2;i++){
+    	  if(n%i==0){
+                return false;                  
+	            }
+	        }
+	       return true;
+	}
+    
+	public static void main(String[] args) {
+	    for(int i=0;i<40;i++){
+	    boolean c= prime(i);
+	System.out.println(c+" "+i);        
+	    }
+}
+}
+
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+	public static void main(String[] args) {
+	int n=40;
+	boolean primes[] = new boolean[n+1];
+	sieve(n, primes);
+	
+	}
+	static void sieve (int n, boolean [] primes){
+	        for(int i=2;i*i<=n;i++){
+	            if(!primes[i]){
+	                for(int j=i*2;j<=n;j+=i){
+                        primes[j]=true;	                    
+	                }
+	            }
+	        }
+	        for(int i=2;i<=n;i++){
+	            if(!primes[i]){
+	                System.out.println(i+" ");
+	            }
+	        }
+	    }
+	
+}
