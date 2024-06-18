@@ -1,0 +1,99 @@
+
+import java.util.*;
+public class Main
+{
+    static boolean sorted(int arr[], int i){
+        if(i==arr.length-1){
+            return true;
+        }
+        return arr[i] <arr[i+1] & sorted(arr,i+1);
+    }
+    static boolean linear(int arr[], int i , int data){
+        if(i== arr.length-1){
+            return true;
+        }
+        return (arr[i] == data) || linear(arr, i+1, data);
+    }
+    static int findindex(int[] arr, int target , int index){
+        if(index == arr.length){
+            return -1;
+        }
+        if(arr[index]== target){
+            return index;
+        }
+        else{
+            return findindex(arr,target, index+1);
+        }
+    }
+    static ArrayList<Integer> list = new ArrayList<>();
+     static void findallindex(int[] arr, int target , int index){
+        if(index == arr.length){
+            return;
+        }
+        if(arr[index]== target){
+            list.add(index);
+        }
+        
+            findallindex(arr,target, index+1);
+        
+    }
+    static ArrayList<Integer>  find(int[] arr, int target, int index, ArrayList<Integer> list){
+        if(index==arr.length){
+            return list;
+        }
+        if(arr[index]==target){
+            list.add(index);
+        }
+       return find(arr,target,index+1,list);
+    }
+    //returning the list without taking the argument
+    static ArrayList<Integer>  find1(int[] arr, int target, int index){
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        if(index==arr.length){
+            return list;
+        }
+        if(arr[index]==target){
+            list.add(index);
+        }
+       ArrayList<Integer> ans=find1(arr,target,index+1);
+        list.addAll(ans);
+        return list;
+    }
+    static int rotatedBinarySearch(int arr[],int target, int s, int e){
+        if(s>e){
+            return-1;
+        }
+        int m=s+(e-s)/2;
+        if(arr[m]==target){
+            return m;
+        }
+        if(arr[s]<=arr[m]){
+            if(target>= arr[s] && arr[m]>=target){
+                return rotatedBinarySearch(arr,target,s,m-1);
+            }
+            else
+            {
+                return rotatedBinarySearch(arr,target, m+1, e);
+            }
+        }
+        if(target >=arr[m] && target<=arr[e]){
+            return rotatedBinarySearch(arr,target,m+1,e);
+        }
+           return rotatedBinarySearch(arr,target,s,m-1);
+    }
+	public static void main(String[] args) {
+ 	    int arr[]={1,2,2,4,6,7,2,2};
+// 	    boolean c= sorted(arr, 0);
+// 		System.out.println(c);
+// 		 boolean d= linear(arr,0,24);
+// 		System.out.println(d);
+// 	    findallindex(arr,2,0);
+// 		System.out.println(list);
+// 	   find1(arr,2,0);
+// 		System.out.println(list);
+//		System.out.println(find1(arr,2,0));
+   int[] arr1={5,6,7,8,1,2,3};
+   System.out.println(rotatedBinarySearch(arr1,5,0,arr1.length-1));
+	}
+}
