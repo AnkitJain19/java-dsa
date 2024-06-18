@@ -1,0 +1,77 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    static int sumofdigit(int n){
+        if(n==0){
+            return 0;
+        }
+        return  sumofdigit(n/10)+(n%10);
+        
+    }
+    static int reverse(int n,int ans){
+        if(n==0){
+          return ans;
+             }
+             ans=(ans*10)+(n%10);
+             System.out.println(ans);
+        return  reverse(n/10,ans);
+        
+    }
+    static int rev1(int n){
+        int digit =(int) (Math.log10(n))+1;
+        return helper(n,digit);
+    }
+    private static int helper(int n, int digit){
+        if(n%10==n)
+            return n;
+        int r=n%10;
+        return r*(int)(Math.pow(10,digit-1))+helper(n/10,digit-1);
+    }
+    static int countzero(int n, int count){
+        if(n==0){
+            return count;
+        }
+        int digit =n%10;
+        if(digit == 0){
+            return countzero(n/10,count+1);
+        }
+        else{
+            return countzero(n/10, count);
+        }
+    }
+    static int nosofstep(int n, int count){
+        if(n==0){
+            return count;
+        }
+        if(n%2==0){
+            return nosofstep(n/2,count+1);
+        }
+        else{
+            return nosofstep(n-1,count+1);
+        }
+    }
+	public static void main(String[] args) {
+// 	    int c=sumofdigit(172);
+// 		System.out.println(c);
+	   // reverse(2473);
+// 	   int n=232;
+// 	 int temp = reverse(n,0);
+//         if(n == temp){
+//         System.out.println("yes");
+//         }
+//         else{
+//          System.out.println(temp);
+//         }
+// int c=countzero(120020,0);
+// System.out.println("count :"+c);
+int c=nosofstep(120,0);
+System.out.println("count :"+c);
+	}
+}
