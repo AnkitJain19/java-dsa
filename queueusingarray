@@ -1,0 +1,47 @@
+class HelloWorld {
+   static int a[]= new int[10];
+    static int f=-1;
+    static int r=-1;
+    static void enqueue(int data){
+        int n=a.length;
+        if(r==n-1){
+            System.out.println("queue is overflow");
+        }
+        else if(f==-1 && r==-1){
+            f++;
+            r++;
+            a[r]=a[f]=data;
+            System.out.println("queue is pushed");
+        }
+        else{
+            r++;
+            a[r]=data;
+            System.out.println("queue is pushed");
+        }
+    }
+    static void dequeue(){
+        if(r==-1){
+            System.out.println("queue is underflow");
+        }
+        else{
+            System.out.println("queue is poped");
+            f=f+1;
+        }
+    }
+    static void peek(){
+        System.out.println(a[f]);
+    }
+    static void display(){
+        for(int i=f; i<=r;i++){
+            System.out.println(a[i]);
+        }
+    }
+    public static void main(String[] args) {
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    dequeue();
+    display();
+    peek();
+    }
+}
