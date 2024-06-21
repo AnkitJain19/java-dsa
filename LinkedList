@@ -1,0 +1,51 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main{
+
+class Node {
+    int value ;
+    Node next;
+}
+public Node(int value){
+    this.value= value;
+}
+private int size;
+public Main(){
+    this.size=0;
+}
+public void pushed(int data){
+    Node top = new Node(data);
+    top=top.next;
+    System.out.println("stack is pushed "+top.data);
+}
+public void poped(){
+    Node top;
+    if(top==NULL){
+        System.out.println("stack is underflow");
+    }
+    else{
+        top=top.next;
+        System.out.println("stack is poped");
+    }
+}
+public void display(){
+    Node temp=top;
+    while(temp!= NULL){
+        System.out.println(temp.data);
+        temp=temp.next;
+    }
+}
+	public static void main(String[] args) {
+    pushed(10);
+    pushed(20);
+    pushed(30);
+    poped();
+    display();
+	}
+}
