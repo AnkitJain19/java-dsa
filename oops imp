@@ -6,11 +6,12 @@ static int a=10;
         a++;
     }
     static{
-                System.out.println("first");
+        System.out.println("first");
         a++;
     }
 
 {
+    a++;
     System.out.println("fourth");
 }
 }
@@ -26,8 +27,7 @@ public class hello extends HelloWorld{
         
     }
 }
-/*
-java -cp /tmp/4yjQqiiyuU/hello
+java -cp /tmp/3UKWMGIYWC/hello
 first
 second
 fourth
@@ -38,7 +38,6 @@ fourth
 third
 fourth
 third
-15
+19
 
 === Code Execution Successful ===
-*/
