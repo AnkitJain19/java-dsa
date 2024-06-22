@@ -1,0 +1,44 @@
+
+class HelloWorld {
+static int a=10;
+   HelloWorld(){
+        System.out.println("third");
+        a++;
+    }
+    static{
+                System.out.println("first");
+        a++;
+    }
+
+{
+    System.out.println("fourth");
+}
+}
+public class hello extends HelloWorld{
+    public static void main(String[] args) {
+        System.out.println("second");
+        HelloWorld h1 = new HelloWorld();      
+        HelloWorld h2 = new HelloWorld();
+        HelloWorld h3 = new HelloWorld();
+        HelloWorld h4 = new HelloWorld();
+
+        System.out.println(h1.a);
+        
+    }
+}
+/*
+java -cp /tmp/4yjQqiiyuU/hello
+first
+second
+fourth
+third
+fourth
+third
+fourth
+third
+fourth
+third
+15
+
+=== Code Execution Successful ===
+*/
