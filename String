@@ -1,0 +1,88 @@
+import java.util.*;
+public class Main
+{
+    //string is collection in sequence of character.
+	public static void main(String[] args) {
+    int a=10; // a is reference variable of type int
+    String name="ankit jain";//string is class and final. ankit  jain is object. string is datatype
+    String b="ankit";// b and c are same reference variable.it is stored in string pool("ankit"). it is separate
+    String c="ankit";//memory structured inside the heap and all the similar value of string are not recreated in string pool.
+    //heap is separate memory it make program more efficient. you can't change the object.
+    //b="jain";
+    System.out.println(b);
+    //string object is not but we can create a new object. it will destroyed or garabage collector prev value of string in java.
+    /* why we can,t modify string object:
+    p1-|        kunal is stored in all the object .but we change in one reference variable it will affect the 
+    p2 |        all the reference variable that is why string is immutable .    
+    p3 |ankit 
+    p4-|
+    they are two ways of comparison
+    == - it check the reference variable are pointing to same object.
+    .equals- it check the value of string is equal or not
+    how to create diff object of same value.
+    we create the object explicitly with the help of new keyword.it is not stored in string pool.
+    only literal is stored in string pool.
+    */
+    System.out.println(c==b);//true
+    String ab= new String("kunal");
+    String bc= new String("kunal");
+    System.out.println(ab==bc);// false
+    System.out.println(ab.equals(bc));//true
+    System.out.println(ab.charAt(0));//a
+    /*
+    public static final PrintStream out= null;
+    PrintStream stream has method println()
+    println -it internally call valueOf then convert tostring method
+    s.o.p
+    */
+    String namevalue="ankit";
+    System.out.println(namevalue);
+    float a1=1234.67889f;
+    System.out.printf("%.2f %s",a1,"\n");//1234.68
+    System.out.printf("%.3f",Math.PI);//3.142
+    System.out.printf("%s %s","\n ankit","jain");
+    System.out.println("a"+"b");//ab
+    System.out.println('a'+'b');//97+98
+    System.out.println('a'+3); //100   
+    System.out.println((char)('a'+3));//d
+    System.out.println("a"+3); //a3 when the integer is concate with the string it is converted into the interger wrapper classes
+    //integer will be coverted to Integer that will call tostring
+    //this is same as after a few step "a"+"1"
+    System.out.println("kunal"+new ArrayList<>());//kunal []
+    System.out.println("kunal"+new Integer(56));//kunal56
+    //+operator-it is only defined for primitive and when any one value is string
+    //if we two complex object is added with + operator.
+    //operator overloading is not supported but exception case "a"+"b" it is intentionally supported
+    //performance
+    String series="";
+    for(int i=0;i<26;i++){
+        char ch=(char)('a'+i);
+        // ch=(char)(ch+32);
+        // System.out.print(ch);
+         char ch1=(char)('a'+i-32);
+        series=series+ch1;
+        System.out.print(series);
+    }
+    //memory wastage in string because it will create new object every time.
+    //StringBuilder is class 
+    StringBuilder builder = new StringBuilder();
+     for(int i=0;i<26;i++){
+        char ch=(char)('a'+i);
+        // ch=(char)(ch+32);
+        // System.out.print(ch);
+        // char ch1=(char)('a'+i-32);
+        builder.append(ch);
+    }
+       System.out.print(builder);
+	
+	
+// there is no memory wastage because it will not create new object every time.
+//StringBuilder is mutable.
+//StringBuilder is reverse.
+builder.reverse();
+System.out.println(builder);
+String g1="ankit jain";
+System.out.println(Arrays.toString(g1.toCharArray()));
+
+}
+}
