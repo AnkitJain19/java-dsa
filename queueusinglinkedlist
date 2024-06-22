@@ -1,0 +1,59 @@
+class Queue1{
+  class Node{
+    int data;
+    Node next;
+  }
+  Node front, rear;
+  Queue1() { this.front = null;
+  this.rear= null;}
+  public void enqueue(int x){
+    Node temp = new Node();
+    if(front== null && rear == null){
+    temp.data=x;
+    temp.next=front;
+    temp.next=rear;
+    rear=temp;
+    }
+    else{
+      temp.data=x;
+      temp.next=rear;
+      rear= temp;
+    }
+    System.out.println("queue is pushed"+rear.data);
+  }
+  public void peek(){
+    System.out.println(front.data);
+  }
+  
+  public void dequeue(){
+    if(front==null && rear== null){
+      System.out.println("underflow");
+    }
+    else if(front==rear){
+    System.out.println("stack is poped");
+      front=null;
+      rear=null;
+    }
+    else{
+      System.out.println("stack is poped");
+      front=front.next;
+    }
+  }
+public  void display(){
+    Node temp=rear;  
+    while(temp!=null){
+      System.out.println(temp.data);
+      temp=temp.next;
+    }
+}
+public static void main(String s[]){
+  Queue1 s1= new Queue1();
+  s1.enqueue(10);
+  s1.enqueue(20);
+  s1.enqueue(30);
+  s1.display();
+  s1.peek();
+  s1.dequeue();
+  //s1.display();
+}
+}
