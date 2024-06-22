@@ -1,0 +1,38 @@
+class Stack1{
+  class Node{
+    int data;
+    Node next;
+  }
+  Node top ;
+  Stack1() { this.top = null; }
+  public void pushed(int x){
+    Node temp = new Node();
+    temp.data=x;
+    temp.next=top;
+    top=temp;
+    System.out.println("stack is pushed"+top.data);
+  }
+  public void pop(){
+    if(top==null){
+      System.out.println("underflow");
+    }
+    System.out.println("stack is poped"+top.data);
+    top=top.next;
+  }
+public  void display(){
+    Node temp=top;  
+    while(temp!= null){
+      System.out.println(temp.data);
+      temp=temp.next;
+    }
+}
+public static void main(String s[]){
+  Stack1 s1= new Stack1();
+  s1.pushed(10);
+  s1.pushed(20);
+  s1.pushed(30);
+  s1.display();
+  s1.pop();
+  s1.display();
+}
+}
