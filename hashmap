@@ -1,0 +1,109 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+class MapUsingHash{
+    private Entity[] entities;
+    
+}
+{   //binary search tree -o(logn)
+    //hashmap -o(1) key-value pair
+    /*
+    key   value
+    kunal  88
+    ankit  99
+    rahul  100
+    
+    map.get("Kunal"); //88 O(1)
+     it will directly jump into the class 
+    */
+    /*Hashcode keys have to integer .
+    we need all the element as the number-> hashcode function
+    hashcode -> can be large -> reduce it.
+    reduce all element in table to a size n .
+    
+    m=9;
+    insert word "cino"-> hash("cino")=83479
+    hashcode of number is nos itself.
+    hashcode of string is ascii value.
+    hashing - it is used to reduce the nos of element in the hashcode in the array size format .
+    if the collision of same hashing element,they are multiple way to lead collision
+    1 way- chaining
+    2 way- open addressing 
+    */
+    
+	public static void main(String[] args) {
+	String name="ankit";
+	int code =name.hashCode();
+	System.out.println(code);
+	Integer a=123;
+	int code1 =a.hashCode();
+	System.out.println(code1);
+	HashMap<String,Integer> map= new HashMap<>();
+	map.put("Kunal",89);
+	map.put("Rahul",99);
+	map.put("rohit",94);
+	System.out.println(map.get("kunal"));//89
+    System.out.println(map.containKey("kunal"));
+    
+	}
+}/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+class MapUsingHash{
+    private Entity[] entities;
+    
+}
+{   //binary search tree -o(logn)
+    //hashmap -o(1) key-value pair
+    /*
+    key   value
+    kunal  88
+    ankit  99
+    rahul  100
+    
+    map.get("Kunal"); //88 O(1)
+     it will directly jump into the class 
+    */
+    /*Hashcode keys have to integer .
+    we need all the element as the number-> hashcode function
+    hashcode -> can be large -> reduce it.
+    reduce all element in table to a size n .
+    
+    m=9;
+    insert word "cino"-> hash("cino")=83479
+    hashcode of number is nos itself.
+    hashcode of string is ascii value.
+    hashing - it is used to reduce the nos of element in the hashcode in the array size format .
+    if the collision of same hashing element,they are multiple way to lead collision
+    1 way- chaining
+    2 way- open addressing 
+    */
+    
+	public static void main(String[] args) {
+	String name="ankit";
+	int code =name.hashCode();
+	System.out.println(code);
+	Integer a=123;
+	int code1 =a.hashCode();
+	System.out.println(code1);
+	HashMap<String,Integer> map= new HashMap<>();
+	map.put("Kunal",89);
+	map.put("Rahul",99);
+	map.put("rohit",94);
+	System.out.println(map.get("kunal"));//89
+    System.out.println(map.containKey("kunal"));
+    
+	}
+}
