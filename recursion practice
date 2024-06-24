@@ -1,0 +1,50 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    static int gcd(int a, int b){
+        if(a==0)
+        return b;
+        if(b==0)
+        return a;
+        if(a>b){
+            return gcd(a-b,b);
+        }
+        else if(b>a)
+        return gcd(a,b-a);
+
+        return a;
+    }
+    static int palindrome(int n, int temp){
+        int r;
+        if(n==0){
+            return temp;
+        }
+         temp=temp*10+n%10;
+        r=palindrome(n/10,temp);
+        return r;
+    }
+    static String reverse(String s, int index, int n,String str){
+        if(index==s.length())
+            return str;
+        reverse(s,index+1,n,str);
+    str=str+String.valueOf(s.charAt(index));
+        return str;
+    }
+	public static void main(String[] args) {
+		//System.out.println(gcd(10,20));
+		int c=palindrome(123,0);
+		System.out.println(c);
+	reverse("abc",0,3,"");
+	//	System.out.println(str);
+// 		if(temp==c){
+		    
+// 		}
+	}
+}
