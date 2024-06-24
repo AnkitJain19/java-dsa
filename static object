@@ -1,0 +1,35 @@
+ class MyClass {
+    // Static variable
+    public static int myStaticVar = 10;
+    
+    // Static object
+    public static MyObject myStaticObject = new MyObject();
+    
+    // Static method
+    public static void myStaticMethod() {
+        System.out.println("This is a static method.");
+    }
+}
+public class My{
+    public static void main(String[] args) {
+        // Accessing static variable
+        System.out.println("Static variable: " + MyClass.myStaticVar);
+        
+        // Accessing static method
+        MyClass.myStaticMethod();
+    
+        // Accessing static object and its method
+        MyClass.myStaticObject.display();
+        System.out.println(MyClass.myStaticObject.a);
+              System.out.println("Size of EmptyClass object: " +   
+      (Runtime.getRuntime().totalMemory() -   
+      Runtime.getRuntime().freeMemory()));  
+
+    }
+}
+class MyObject {
+    int a=10;
+    public void display() {
+        System.out.println("This is a method in MyObject.");
+    }
+}
