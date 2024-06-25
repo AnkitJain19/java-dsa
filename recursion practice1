@@ -1,0 +1,43 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    static int armstrong(int n){
+        int r,i=0;
+        if(n==1){
+            return n;
+        }
+        r=n%10;
+        i=i*10+(r*r*r)+armstrong(n/10);
+        return i;
+    }
+    static boolean sum1(int sum,int n, int a[]){
+    
+
+        if(sum==0)
+            return true;
+        
+        if(n==0){
+            return false;
+        }
+        
+        if (a[n - 1] > sum)
+            return sum1(sum, n - 1, a);
+            
+        return sum1(sum-a[n-1],n-1,a) || sum1(sum,n-1,a);
+    }
+
+    static 
+	public static void main(String[] args) {
+    int a[]={1,3,3,6,6,8,8};
+	boolean s=sum1(10,a.length,a);
+	System.out.println(s);
+	    
+	}
+}
