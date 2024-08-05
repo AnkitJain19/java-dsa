@@ -1,0 +1,112 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class LL {
+private Node head,tail;
+private class Node{
+    int data;
+    Node next, prev;
+
+public Node(int data){
+    this.data=data;
+}
+public Node(int data, Node next){
+    this.data = data;
+    this.next=next;
+}
+}
+private int size;
+public LL(){
+    this.size=0;
+}
+public void display(){
+    Node temp=head;
+    while(temp != null){
+        System.out.println(temp.data);
+        temp=temp.next;
+    }
+}
+public void insertatthebeginning(int val){
+    Node node = new Node(val);
+    node.next=head;
+    head= node;
+    if(tail== null){
+        tail=head;
+    }
+    size+=1;
+}
+public void insertattheend(int val){
+    Node node = new Node(val);
+    if(tail==null){
+        insertatthebeginning(val);
+    }
+    tail.next=node;
+    tail= node;
+    size++;
+}
+public void insertatthemiddle(int val, int index){
+    if(index==0){
+        insertatthebeginning(val);
+        return;
+    }
+    if(index==size){
+        insertattheend(val);
+        return;
+    }
+    Node temp=head;
+    for(int i=1;i<index;i++){
+        temp=temp.next;
+    }
+    Node node = new Node(val,temp.next);
+    temp.next=node;
+}
+public int deletefirst(){
+    int val=head.data;
+    head= head.next;
+    if(head== null){
+        tail=null;
+    }
+    size--;
+    return val;
+}
+public int deletelast(){
+    if(size<=1){
+     return deletefirst();
+    }
+    int val=tail.data;
+    Node second= get(size-2);
+    tail= second;
+    tail.next=null;
+    return val;
+}
+public Node get(int index){
+    Node node= head;
+    for(int i=0;i<index;i++){
+        node=node.next;
+    }
+    return node;
+}
+public int deletemid(int index){
+    if(index<=1){
+        return deletefirst();
+    }
+    if(index==size-1){
+        return deletelast();
+    }
+    Node prev=get(index-1);
+    int val=prev.next.data;
+    prev.next= prev.next.next;
+    return val;
+}
+    public static void main(String[] args) {
+    LL l1= new LL();
+    l1.insertatthebeginning(3);
+    l1.insertatthebeginning(2);
+    l1.insertatthebeginning(1);
+    
+    l1.deletemid(1);
+    l1.deletefirst();
+    l1.deletelast();
+    l1.display();
+    }
+}
