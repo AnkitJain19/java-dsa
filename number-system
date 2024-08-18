@@ -1,0 +1,69 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    static void dectobin(int n){
+        int binary[] = new int[1000];
+        int i=0;
+        while(n!=0){
+            binary[i]=n%2;
+            n=n/2;
+            i++;
+        }
+        for(int j=i-1;j>=0;j--){
+            System.out.println(binary[j]);
+        }
+    }
+    static void dectooct(int n){
+        int binary[] = new int[1000];
+        int i=0;
+        while(n!=0){
+            binary[i]=n%8;
+            n=n/8;
+            i++;
+        }
+        for(int j=i-1;j>=0;j--){
+            System.out.println(binary[j]);
+        }
+    }
+    static void bintodec(int n){
+        int binary[] = new int[1000];
+        int base=1;
+        int sum=0;
+        while(n!=0){
+            int last=n%10;
+            n=n/10;
+            sum=sum+last*base;
+            base=base*2;
+        }
+        System.out.println(sum);
+    }
+    static void bintooct(int n){
+        int base=1;
+        int sum=0;
+        while(n!=0){
+            int last=n%10;
+            n=n/10;
+            sum=sum+last*base;
+            base=base*8;
+        }
+        System.out.println(sum);
+    }
+    static void octtobin(int n){
+        int dec=0;
+        int i=0;
+        while(n!=0){
+            int last = n%10;
+            dec=(int)(dec+last*Math.pow(8,i));
+            i++;
+            n=n/10;
+        }
+        dectobin(dec);
+        //System.out.println(dec);
+    } 
+    public static void main(String[] args) {
+        //dectooct(1000);
+        //bintooct(101);
+        octtobin(315);
+    }
+}
