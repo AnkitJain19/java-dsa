@@ -1,0 +1,77 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Hello{
+    static int staticfield=0;//class level are staticfield varaiable shared amongst all the instances of Hello
+    int instancefield;//non-static , instance level... each instance of outerclass get its own instancefield.
+    public Hello(){
+        instancefield=1;
+        System.out.println("hello from outerclass");
+    }
+    static class B{
+        //static nested class can access static members of the enclosing class
+        //static nested classes are not instance and no its reference for outerclass
+       static int staticfield2=2;
+       
+        public B(){
+            System.out.println("hello from the constructor");
+            System.out.println(staticfield);
+        }
+    }
+    class Innerclass{
+        //inner class are associated with an instance of the enclosing class.
+        //inner class can access static and non-static members of the enclosing class
+       int instancefield=2;
+        public Innerclass(){
+            System.out.println("heloo");
+            System.out.println(staticfield);//0
+            System.out.println(instancefield);//2
+            System.out.println(this.instancefield);//2         
+            System.out.println(Hello.this.instancefield);//1
+        }
+    }
+    //
+    public void instancemethod(){
+      //local class
+      int localvar=500;
+      //local=600;//it is final it can't changed
+      class local{
+          public local(){
+              System.out.println("constructor of local class");
+              System.out.println(localvar);
+              System.out.println(instancefield);
+          }
+      }
+       local l1= new local();
+       //local class can access the local varaiables of the enclosing method
+       //only if the total varaiable are final or effectively final 
+       //anonymous class
+       //we need the name of an interface to implement or a class to extends in order to create anonymous class
+       Object obj1= new Object(){
+           //override method
+           @Override
+           public String toString(){
+               return "Hello";
+           }
+       };
+       System.out.println(obj1);
+    }
+    
+}
+
+public class A{
+     public static void main(String[] args) {
+        //static field
+        // System.out.println(Hello.staticfield++);
+        // System.out.println(Hello.staticfield);
+        // //non static field
+         Hello h1= new Hello();
+
+        // System.out.println(h1.instancefield);
+        //Hello.B h2= new Hello.B();
+       // System.out.println(Hello.B.staticfield2);
+       // Hello.Innerclass ic= h1.new Innerclass();
+        h1.instancemethod();
+        
+    }
+}
