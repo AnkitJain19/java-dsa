@@ -1,0 +1,74 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    
+    // void type(){
+    //  int arr[]={1,2,3,4,0};
+    //  boolean isAsc=true;
+    //  boolean isdesc=true;
+    //  for(int i=0;i<arr.length-1;i++){
+    //      if(arr[i]<arr[i+1]){
+    //          isasc=false;
+    //      }
+    //      else if( arr[i]>arr[i+1]){
+    //          isdesc=false;
+    //      }
+    //  }
+    // if(isasc==false && isdesc==false){
+    //     return -1;
+    // }
+    // }
+    static void missing(int r){
+        int b[]= new int[5];
+        int arr[]={1,2,5};
+        int low=arr[0];
+        int high=arr[arr.length-1];
+        HashSet<Integer>hs = new HashSet<Integer>();
+        boolean ihit=true;
+        for(int i:arr){
+            hs.add(i);
+        }
+        for(int i =low;i<=high;i++){
+            if(!hs.contains(i)){
+                System.out.println(i);
+                ihit=false;}}
+        if(ihit){
+            System.out.println(high-1);}}
+    static void palindrome(){
+       String pal[]={"race","nitin","rar"};
+       int max1=0;
+       for(int i=0;i<pal.length;i++){
+           String ch=pal[i];
+           if(pal1(ch)){
+              max1=Math.max(max1,ch.length());} }
+       System.out.println(max1);}
+    static boolean pal1(String s){
+        StringBuilder str= new StringBuilder(s);
+        str=str.reverse();
+        String str1= s.toString();
+        return s==str1;
+    }
+       static void leftshift(){
+        byte x=64;
+        int i;
+        byte y;
+        i=x<<2;
+        y=(byte)(x<<2);
+        System.out.println(i+" "+y);
+    }
+    static void rightshift(){
+        byte x=64;
+        int i;
+        byte y;
+        i=x>>2;
+        y=(byte)(x>>2);
+        System.out.println(i+" "+y);
+    }
+    
+    public static void main(String[] args) {
+        missing(5);
+        palindrome();
+        System.out.println("Try programiz.pro");
+    }
+}
