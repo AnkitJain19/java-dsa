@@ -1,0 +1,67 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    static ArrayList<Integer> leader(int arr[]){
+        int n=arr.length;
+        int b[]= new int[n];
+        ArrayList<Integer> a1= new ArrayList<Integer>();
+        int k=0;
+        a1.add(arr[n-1]);
+        int max=arr[n-1];
+        for(int i=n-2;i>0;i--){
+            if(arr[i]>max){
+                max=arr[i];
+                a1.add(arr[i]);
+            }
+        }
+        return a1;
+    }
+    static int longestconsecutive(int arr[]){
+        Arrays.sort(arr);
+        int count=1;
+        int max=0;
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i]+1==arr[i+1]){
+            count++;
+            if(max<count){
+                max=count;
+            }
+          }
+          else{
+              count=1; }   }
+     return max;
+    }
+        public int longestConsecutive(int[] nums1) {
+        TreeSet<Integer> h1= new TreeSet<>();
+        for(int num:nums1){
+            h1.add(num);
+        }
+                List<Integer> nums= new ArrayList<Integer>(h1); 
+        int maxcount=1;
+        if(nums.size()==0){
+            return 0;
+        }
+        int count=1;
+        for(int i=0; i<h1.size()-1;i++){
+            if(nums.get(i)+1==nums.get(i+1)){
+                count++;
+            maxcount=Math.max(maxcount,count);
+        }
+            else
+                count=1;
+        }
+        return maxcount;
+    }
+    
+    public static void main(String[] args) {
+        int arr[]={4, 3, 5, 2};
+        // ArrayList<Integer> a1= leader(arr);
+        // for(int i=0;i<a1.size();i++){
+        //     System.out.println(a1.get(i));
+        // }
+        int max=longestconsecutive(arr);
+        System.out.println(max);
+    
+    }
+}
