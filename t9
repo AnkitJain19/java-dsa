@@ -1,0 +1,22 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    static String game(String a,String b){
+    String ans="";
+    HashSet<Character>h1= new HashSet<>();
+    for(int i=0;i<b.length();i++){
+        h1.add(b.charAt(i));
+    }
+    for(int i=0;i<a.length();i++){
+        if(!h1.contains(a.charAt(i))){
+            ans=ans+a.charAt(i);
+        }
+    }
+    return ans;
+    }
+    static 
+    public static void main(String[] args) {
+        System.out.println(game("tiger","ige"));
+    }
+}
