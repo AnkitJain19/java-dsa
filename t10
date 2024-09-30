@@ -63,8 +63,25 @@ class HelloWorld {
         }
         return false;
     }
+    static int number(int num){
+        int sum=0;
+        
+        while(num!=0){
+            int i=num%10;
+            sum=sum+i;
+            num=num/10;
+            if(num==0 && sum>=10){
+                num=sum;
+                sum=0;
+            }
+            
+        }
+        
+        return sum;
+    }
     public static void main(String[] args) {
-        // System.out.println("Enter the size of array");
+        int a= number(567);
+        System.out.println(a);
         // int arr[]={1,2,1};
         // int d[]=abc(arr);
         // for(int i=0;i<d.length;i++){
