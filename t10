@@ -1,0 +1,91 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    static int[] abc(int arr[]){
+        int b[]= new int[arr.length*2];
+        for(int i=0;i<arr.length;i++){
+            b[i]=arr[i];
+        }
+        for(int i=arr.length;i<b.length;i++){
+            b[i]=arr[i-arr.length];
+        }
+        return b;
+    }
+    static int distinct(int arr[]){
+        HashMap<Integer,Integer> h1= new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            h1.put(arr[i],h1.getOrDefault(arr[i],0)+1);
+        }
+        int sum=0;
+        for(Map.Entry<Integer, Integer> entry: h1.entrySet()){
+            if(entry.getValue()==1){
+                sum=sum+entry.getKey();
+            }
+        }
+        return sum;
+    }
+    
+    static String encrypted(String s){
+        int count=1;
+        String ans="";
+        for(int i=0;i<s.length();i++){
+            if( (i+1<s.length())&&(s.charAt(i)==s.charAt(i+1)) ){
+                count++;
+            }
+            else{
+                ans+=s.charAt(i);
+                ans+=count;
+                count=1;
+            }
+        }
+        
+        StringBuffer s2= new StringBuffer(ans);
+            return s2.reverse().toString();
+    }
+    static boolean isprime(int num){
+        if(num==2){
+            return true;
+        }
+        for(int i=2;i*i<=num;i++){
+            if(num%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    static boolean sum(int num){
+        for(int i=2;i<=num;i++){
+            if(isprime(i)&&isprime(num-i)){
+                System.out.println(i+""+(num-i));
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        // System.out.println("Enter the size of array");
+        // int arr[]={1,2,1};
+        // int d[]=abc(arr);
+        // for(int i=0;i<d.length;i++){
+        //     System.out.print(d[i]);    
+        // }
+        // Scanner sc= new Scanner(System.in);
+        // int v=sc.nextInt();
+        // int w=sc.nextInt();
+        // if(w<2 ||w%2!=0||v<w){
+        //     System.out.println("Invalid Input");
+        // }
+        // else{
+        //     int x,y;
+        //     x=(w-2*v)/2;
+        //     y=v-x;
+        //     System.out.println("4w:"+x+"2w:"+y);
+        // }
+        // String s2="aabbcccaa";
+        // System.out.println(encrypted(s2));
+        // System.out.println(sum(55));
+        int arr[]={1,2,3,1};
+        System.out.println(distinct(arr));
+    }
+}
