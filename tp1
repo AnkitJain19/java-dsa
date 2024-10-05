@@ -1,0 +1,62 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.io.*;
+class HelloWorld {
+    static int train(int speed){
+        int distance=800;
+        int ans=0;
+        speed=(speed*5)/18;
+        ans=distance/speed;
+        return ans;
+    }
+    static boolean subarrayavg(int n,int arr[]){
+        int r=arr.length-1;
+        int l=0;
+        int sum=0;
+        int sum1=0;
+        for(int i=0;i<arr.length;i++){
+            sum=sum+arr[i];
+        }
+        int avgl,avgr;
+        while(l<arr.length-1){
+            sum=sum-arr[l];
+            sum1=sum1+arr[l];
+            avgl=sum1/(l+1);
+            avgr=sum/r;
+            if(avgl==avgr)
+                return true;
+                r--;
+                l++;
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+      //  int t=train(40);
+        //System.out.println(t);
+        // Scanner sc= new Scanner(System.in);
+        // int n;
+        // n=sc.nextInt();
+        // int arr[]= new int[n];
+        // for(int i=0;i<n;i++){
+        //     if)
+        //      arr[i]=sc.nextInt();
+        // }
+        // for(int i=0;i<n;i++){
+        //      System.out.print(arr[i]+" ");
+        // }
+        // boolean s=subarrayavg(n,arr);
+        // System.out.println(s);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try{
+            int a=Integer.parseInt(br.readLine());
+            float b=Float.parseFloat(br.readLine());
+            double c=Double.parseDouble(br.readLine());
+            byte d=Byte.parseByte(br.readLine());
+            String n=br.readLine(); 
+        }
+        catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+}
