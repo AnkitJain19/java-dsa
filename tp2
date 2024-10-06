@@ -1,0 +1,41 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+   static boolean isperfect(int num){
+        int sum=0;
+        for(int i=1;i<=Math.sqrt(num);i++){
+            if(num%i==0){
+                sum=sum+i;
+                if(num/i!=i && num/i!=num){
+                    sum+=(num/i);
+                }
+            }
+        }
+        return num==sum;
+    }
+    static String countFrequency(String s){
+        String s1[]=s.split(" ");
+        HashMap<String,Integer> h1= new HashMap<>();
+        char ch[]=s.toCharArray();
+        for(int i=0;i<ch.length;i++){
+            if(ch[i]>='0' && ch[i]<='9'){
+                return "invalid string";
+            }
+        }
+        for(int i=0;i<s1.length;i++){
+            h1.put(s1[i],h1.getOrDefault(s1[i],0)+1);
+        }
+        String str="";
+        for(Map.Entry<String,Integer> e:h1.entrySet()){
+            str=str+e.getKey()+" "+e.getValue()+" ";
+        }
+        return str;
+    }
+    public static void main(String[] args) {
+        // boolean t=isperfect(28);
+        // System.out.println(t);
+         String t=countFrequency("apple banana apple banana grapes apple");
+         System.out.println(t);
+    }
+}
