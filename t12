@@ -1,0 +1,52 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    static int seven(int a, int b,int c){
+        if(a!=7 && b!=7 && c!=7){
+            return a*b*c;
+        }
+        else if(a==7 && b!=7 && c!=7){
+            return b*c;
+        }
+        else if(a!=7 && b==7 && c!=7){
+            return c;
+        }
+        else{
+            return -1;
+        }
+        
+    }
+    static String   
+    public static void main(String[] args) {
+       // System.out.println(seven(7,3,7));
+       Scanner sc = new Scanner(System.in);
+       
+    //   ArrayList<Integer> a1= new ArrayList<>();
+    //   int income=0;
+    //   int max=20;
+    //   int age;
+    //   while(a1.size()<max){
+    //       String input=sc.next();
+    //       if(input.isEmpty()){
+    //           break;
+    //       }
+    //      age=Integer.parseInt(input);
+    //     if(age<=0 && age>120){
+    //         System.out.println("Invalid Input");
+    //         break;
+    //     }
+    //     if(age<=17){
+    //         income+=200;
+    //     }
+    //     else if(age<=17 || age<=40){
+    //         income+=400;
+    //     }
+    //     else{
+    //         income+=300;
+    //     }
+    //     a1.add(age);
+    // }
+    // System.out.println(income+"INR");
+}
+}
