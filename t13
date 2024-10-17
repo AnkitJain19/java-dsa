@@ -1,0 +1,72 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    //ARRAY={3,2,-1,4,-6,3,-2,6}
+    
+    static int maximumProduct(int arr[]){
+        int prefix=1;
+        int suffix=1;
+        int max=Integer.MIN_VALUE;
+        int max2=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(prefix==0){
+                prefix=1;
+            }
+            prefix=prefix*arr[i];
+           max=Math.max(prefix,max);
+        }
+        for(int i=arr.length-1;i>=0;i--){
+            if(suffix==0){
+                suffix=1;
+            }
+            suffix=suffix*arr[i];
+           max2=Math.max(suffix,max2);
+        }
+        return Math.max(max,max2);
+    }
+    static int SubarrayAtmost2(int arr[]){
+        //  int max=Integer.MIN_VALUE;
+        // for(int i=0;i<arr.length;i++){
+        //   HashSet<Integer> h1= new HashSet<>(2);
+        //     for(int j=0;j<arr.length;j++){
+        //         h1.add(arr[j]);
+            
+        //     if(h1.size()<2){
+        //         max=Math.max(max,j-i+1);
+        //     }
+        //     else{
+        //         break;
+        //     }
+        //     }
+        // }
+        // return max;//brute force
+        int l=0,r=0;
+        int maxi=0;
+        HashMap<Integer,Integer> h1 = new HashMap<>(2);
+        while(r<arr.length){
+            h1.put(arr[r],h1.getOrDefault(arr[r],0)+1);
+            if(h1.size()>2){
+                while(h1.size()>2){
+                    h1.put(arr[l],h1.get(arr[l])-1);
+                    if(h1.get(arr[l])==0){
+                        h1.remove(arr[l]);
+                    }
+                    l++;
+                }
+            }
+            if(h1.size()<=2){
+                maxi=Math.max(maxi,r-l+1);
+            }
+            r++;
+        }
+        return maxi;
+    }
+    public static void main(String[] args) {
+        int arr[]={1,2,2,1,-4,2,1,4,2};
+        // int max1=maximumProduct(arr);
+        // System.out.println(max1);
+        int max1=SubarrayAtmost2(arr);
+        System.out.println(max1);
+    }
+}
