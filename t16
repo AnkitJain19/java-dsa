@@ -1,0 +1,60 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    static int gcd(int a,int b){
+        if(a%b==0){
+            return b;
+        }
+        if(a<b){
+            return gcd(b,a); 
+        }
+        return gcd(a%b,b);
+    }
+    static int sum(int num){
+        int s=0;
+        if(num==0){
+            return num;
+        }
+        int digit=num%10;
+        return digit+sum(num/10);
+    }
+        public static boolean isPalindrome(String str, int start, int end) {
+        // Base case: if start index is greater than or equal to end index
+        if (start >= end) {
+            return true;
+        }
+
+        // Check if characters at start and end positions are equal
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+
+        // Recursive call with the next positions
+        return isPalindrome(str, start + 1, end - 1);
+    }
+
+    static void xorswap(int a, int b){
+        a=a^b;
+        b=a^b;
+        a=a^b;
+        System.out.println(a+","+b);
+    }
+    static void divisor(int num){
+        for(int i=1;i*i<=num;i++){
+            if(num%i==0){
+                System.out.println(i+","+num/i);
+            }
+            if(num/i==i){
+                System.out.println(num/i);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println(palindrome(123));
+        xorswap(1,2);
+    System.out.println(sum(123));
+        divisor(123);
+        System.out.println("lcm:"+10*20/gcd(10,20));
+    }
+}
