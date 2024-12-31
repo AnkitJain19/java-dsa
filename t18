@@ -1,0 +1,77 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    //nc2-two unique person=n!/2(n-2)!=n(n-1)/2!
+    static int handshake(int n){
+        return (n*(n-1))/2;
+    }
+    static void moveZero(int arr[]){
+        int j=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=0){
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                j++;
+            }
+        }
+        
+    }
+    public static void main(String[] args) {
+        // Scanner sc= new Scanner(System.in);
+        // int t=sc.nextInt();
+        // while(t>0){
+        //     int n=sc.nextInt();
+        //     System.out.println(handshake(n));
+        //     t--;
+        // }
+        // Scanner sc = new Scanner(System.in);
+        // String str=sc.nextLine();
+        // ArrayList<Integer> a1 = new ArrayList<>();
+        // String s1[]=str.split(" ");
+        // for(int i=0;i<s1.length;i++){
+        //     if(s1[i]!=" "){
+        //         a1.add(Integer.parseInt(s1[i]));
+        //     }
+        // }
+        // int arr[]=new int[a1.size()];
+        // for(int i=0;i<a1.size();i++){
+        //     arr[i]=a1.get(i);
+        // }
+        //     moveZero(arr);
+        // for(int i=0;i<arr.length;i++){
+        //     System.out.println(arr[i]);
+        // }
+        Scanner sc= new Scanner(System.in);
+        String ch=sc.nextLine();
+        char s[]=ch.toCharArray();
+        String word="";
+        int j=0;
+        int n=1;
+        for(int i=0;i<s.length;i++){
+            if(s[i]==' '){
+                n++;
+            }
+        }
+        String s1[]=new String[n];
+        for(int i=0;i<s.length;i++){
+            if(s[i]==' '){
+                s1[j]=word;
+                word="";
+                j++;
+            }
+            else if(i==s.length-1){
+                s1[j]=word+""+s1[s.length-1];
+                word="";
+                j++;
+            }
+            else{
+                word=word+s[i];
+            }
+        }
+        for(int i=0;i<s1.length;i++){
+            System.out.print(s1[i]);
+        }
+    }
+}
