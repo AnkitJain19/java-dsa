@@ -1,0 +1,47 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    //     Comparator<Integer> com=new Comparator<Integer>()
+    //     {//it is used to sort the array in the acording to the las position
+    //         public int compare(Integer i,Integer j){
+    //             if(i%10>j%10)
+    //             return 1;
+    //             else
+    //             return -1;
+    //         }
+    //     };
+    // ArrayList<Integer> a1 = new ArrayList<>();
+    // a1.add(12);
+    // a1.add(23);
+    // a1.add(81);
+    // Collections.sort(a1,com);
+    // System.out.println(a1);
+    
+    //      Comparator<String> com=new Comparator<String>()
+    //     {//it is used to sort the array in the acording to the string length
+    //         public int compare(String i,String j){
+    //             if(i.length()>j.length())
+    //             return 1;
+    //             else
+    //             return -1;
+    //         }
+    //     };
+    // ArrayList<String> a1 = new ArrayList<>();
+    // a1.add("ankit");
+    // a1.add("sd");
+    // a1.add("ram");
+    // Collections.sort(a1,com);
+    // System.out.println(a1);
+        //or
+    //     ArrayList<String> a1 = new ArrayList<>();
+    // a1.add("ankit");
+    // a1.add("sd");
+    // a1.add("ram");
+    // Collections.sort(a1,(a,b)->(a.length()>b.length())?1:-1);
+    // System.out.println(a1);
+     // TreeSet<String> ts=new TreeSet<String>((aStr,bStr) -> bStr.compareTo(aStr));
+
+    }
+}
