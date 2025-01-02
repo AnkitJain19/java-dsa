@@ -45,3 +45,62 @@ class Main {
 
     }
 }
+//comparable
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Student implements Comparable<Student>{
+    int age;
+    String name;
+    public Student(int age,String name){
+        this.age=age;
+        this.name=name;
+    }
+    public int compareTo(Student that){
+        if(this.age>that.age)
+                return 1;
+                else
+                return -1;
+    }
+    public String toString(){
+        return "Student [age="+age+",name="+name+"]";
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        // Comparator<Integer> com=new Comparator<Integer>()
+        // {//it is used to sort the array in the acording to the las position
+        //     public int compare(Integer i,Integer j){
+        //         if(i%10>j%10)
+        //         return 1;
+        //         else
+        //         return -1;
+        //     }
+        // };
+    ArrayList<Student> a1 = new ArrayList<Student>();
+    a1.add(new Student(278,"a"));
+    a1.add(new Student(23,"d"));
+    a1.add(new Student(81,"c"));
+    Collections.sort(a1);
+    for(Student s:a1)
+    System.out.println(s);
+    
+        // Comparator<String> com=new Comparator<String>()
+        
+    // ArrayList<String> a1 = new ArrayList<>();
+    // a1.add("ankit");
+    // a1.add("sd");
+    // a1.add("ram");
+    // Collections.sort(a1,com);
+    // System.out.println(a1);
+        //or
+    //     ArrayList<String> a1 = new ArrayList<>();
+    // a1.add("ankit");
+    // a1.add("sd");
+    // a1.add("ram");
+    // Collections.sort(a1,(a,b)->(a.length()>b.length())?1:-1);
+    // System.out.println(a1);
+     // TreeSet<String> ts=new TreeSet<String>((aStr,bStr) -> bStr.compareTo(aStr));
+
+    }
+}
